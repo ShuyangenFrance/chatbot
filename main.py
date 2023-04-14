@@ -44,15 +44,14 @@ def get_index():
 
 if __name__ == '__main__':
 
-    os.environ['OPENAI_API_KEY'] = "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"
+    os.environ['OPENAI_API_KEY'] = "OPENAI_API_KEY"
 
     # change knowledge base resource here:
     kb="google"
     if kb == "google":
         authorize_gdocs()
         GoogleDocsReader = download_loader('GoogleDocsReader')
-        gdoc_ids = ['1RdVxR0OvU-x1Lkj1gLqpsPG5a9mtwocduuYaZXEsVxo',
-                    '1nYqUejwJoLa5vJ1h-FXo3xrnrV9BS4RBZdOZ04L3wMA']
+        gdoc_ids = ['ID_1','ID_2']
         loader = GoogleDocsReader()
         documents = loader.load_data(document_ids=gdoc_ids)
     elif kb=="local":
